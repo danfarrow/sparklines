@@ -9,19 +9,34 @@ module-type: macro
  * @author danfarrow
  * @version 4.0
  *
- * Usage:
- * <<sparkline4 "
- *     |!Date|!Val|!Percentage|...|
- *     |12/02|50|44%|...|
- *     |11/02|42|32%|...|
- *     |10/02|48|07%|...|"
- *     false false true>>
+ * Basic usage:
+ *
+ *    <<sparkline4 "
+ *    |!Date|!WPM|!Accuracy|
+ *    |13/11|98|99%|
+ *    |12/11|97|99%|
+ *    |11/11|96|98.15%|
+ *    |30/08|99|99%|
+ *    "
+ *    >>
  *
  * In addition to the sparklines the macro will display stats on the longest
  * continuous daily chain (useful for daily goals), and will echo the
  * markdown table. Display of these elements can be over-ridden with the three
  * boolean parameters:
  * <hideChainInfo> <hideDataEcho> <hideSparkline>
+ *
+ * Usage with parameters (this would display only the sparklines):
+ *
+ *    <<sparkline4 "
+ *    |!Date|!WPM|!Accuracy|
+ *    |13/11|98|99%|
+ *    |12/11|97|99%|
+ *    |11/11|96|98.15%|
+ *    |30/08|99|99%|
+ *    "
+ *    true true false
+ *    >>
  *
  * @todo Add text columns to hover text
  * @todo Date field should accept dates with or without years

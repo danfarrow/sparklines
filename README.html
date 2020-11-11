@@ -1056,24 +1056,39 @@ body .markdown-body
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="sparklines">Sparklines<a class="headerlink" href="#sparklines" title="Permanent link"></a></h1>
-<p>Tiddlywiki macro to display multiple SVG sparklines from data in markdown table format</p>
-<h2 id="usage">Usage:<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
-<div class="codehilite"><pre>&lt;&lt;sparkline4 &quot;
-    |!Date|!Val|!Percentage|...|
-    |12/02|50|44%|...|
-    |11/02|42|32%|...|
-    |10/02|48|07%|...|&quot;
-    false false true&gt;&gt;
+<p>Tiddlywiki macro to display multiple SVG sparklines from data in markdown table format.</p>
+<p>I&rsquo;ve developed this macro for my personal tiddlywikis over the last few years and decided to share it here in case anybody might find it useful.</p>
+<h2 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link"></a></h2>
+<p>This is a <a href="https://tiddlywiki.com/">tiddlywiki</a> macro so it will only work inside a tiddlywiki file. After installation (see below), put the following macro code inside a tiddler where you want to display sparklines:</p>
+<div class="codehilite"><pre>   &lt;&lt;sparkline4 &quot;
+   |!Date|!WPM|!Accuracy|
+   |13/11|98|99%|
+   |12/11|97|99%|
+   |11/11|96|98.15%|
+   |30/08|99|99%|
+   &quot;
+   &gt;&gt;
 </pre></div>
 
 <p>Note: <em>The date column is currently in <code>dd/mm</code> format</em></p>
-<p>In addition to the sparklines the macro will display stats on the longest
-continuous daily chain of entries (useful to track daily goals), and will echo the
-original markdown table data.</p>
-<p>The default display of these elements can be over-ridden with the three
-boolean parameters:
-<code>&lt;hideChainInfo&gt; &lt;hideDataEcho&gt; &lt;hideSparkline&gt;</code></p>
+<p>The macro will display a different coloured sparkline for each column of data. Each of the data points has a <code>title</code> attribute which displays the date and value on mouse hover.</p>
+<p>In addition to the sparklines the macro will display stats on the longest continuous daily chain (useful for tracking daily goals), and will echo the markdown table. The daily chain info includes a checkbox which sets a tag named <code>GTDone</code> on the current tiddler.</p>
+<p>Display of these elements can be over-ridden with three boolean parameters: <code>&lt;hideChainInfo&gt; &lt;hideDataEcho&gt; &lt;hideSparkline&gt;</code></p>
+<p>The end result is far less minimal than classic Tuftian sparklines!</p>
 <p><img alt="a preview of the generated sparklines" src="/home/dan/web-dev/sparklines/sparklines.png" /></p>
+<h2 id="usage-with-parameters">Usage with parameters<a class="headerlink" href="#usage-with-parameters" title="Permanent link"></a></h2>
+<p>This example would display just the sparklines:</p>
+<div class="codehilite"><pre>   &lt;&lt;sparkline4 &quot;
+   |!Date|!WPM|!Accuracy|
+   |13/11|98|99%|
+   |12/11|97|99%|
+   |11/11|96|98.15%|
+   |30/08|99|99%|
+   &quot;
+   true true false
+   &gt;&gt;
+</pre></div>
+
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link"></a></h2>
 <ul>
 <li>Create a <a href="https://tiddlywiki.com/">tiddlywiki</a></li>

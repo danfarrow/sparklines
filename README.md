@@ -1,29 +1,51 @@
 # Sparklines
 
-Tiddlywiki macro to display multiple SVG sparklines from data in markdown table format
+Tiddlywiki macro to display multiple SVG sparklines from data in markdown table format.
 
-## Usage:
+I've developed this macro for my personal tiddlywikis over the last few years and decided to share it here in case anybody might find it useful.
+
+## Basic usage
+
+This is a [tiddlywiki](https://tiddlywiki.com/) macro so it will only work inside a tiddlywiki file. After installation (see below), put the following macro code inside a tiddler where you want to display sparklines:
 
 ```
-<<sparkline4 "
-    |!Date|!Val|!Percentage|...|
-    |12/02|50|44%|...|
-    |11/02|42|32%|...|
-    |10/02|48|07%|...|"
-    false false true>>
+   <<sparkline4 "
+   |!Date|!WPM|!Accuracy|
+   |13/11|98|99%|
+   |12/11|97|99%|
+   |11/11|96|98.15%|
+   |30/08|99|99%|
+   "
+   >>
 ```
 
 Note: _The date column is currently in `dd/mm` format_
 
-In addition to the sparklines the macro will display stats on the longest
-continuous daily chain of entries (useful to track daily goals), and will echo the
-original markdown table data.
+The macro will display a different coloured sparkline for each column of data. Each of the data points has a `title` attribute which displays the date and value on mouse hover.
 
-The default display of these elements can be over-ridden with the three
-boolean parameters:
-`<hideChainInfo> <hideDataEcho> <hideSparkline>`
+In addition to the sparklines the macro will display stats on the longest continuous daily chain (useful for tracking daily goals), and will echo the markdown table. The daily chain info includes a checkbox which sets a tag named `GTDone` on the current tiddler.
+
+Display of these elements can be over-ridden with three boolean parameters: `<hideChainInfo> <hideDataEcho> <hideSparkline>`
+
+The end result is far less minimal than classic Tuftian sparklines!
 
 ![a preview of the generated sparklines](sparklines.png)
+
+## Usage with parameters
+
+This example would display just the sparklines:
+
+```
+   <<sparkline4 "
+   |!Date|!WPM|!Accuracy|
+   |13/11|98|99%|
+   |12/11|97|99%|
+   |11/11|96|98.15%|
+   |30/08|99|99%|
+   "
+   true true false
+   >>
+```
 
 ## Installation
 
