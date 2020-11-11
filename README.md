@@ -19,7 +19,7 @@ This is a [tiddlywiki](https://tiddlywiki.com/) macro so it will only work insid
    >>
 ```
 
-Note: _The date column is currently in `dd/mm` format_
+Note: _The date column is currently in `dd/mm` format, with the most recent entries at the top_
 
 The macro will display a different coloured sparkline for each column of data. Each of the data points has a `title` attribute which displays the date and value on mouse hover.
 
