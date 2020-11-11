@@ -13,8 +13,10 @@ Tiddlywiki macro to display multiple SVG sparklines from data in markdown table 
     false false true>>
 ```
 
+Note: _The date column is currently in `dd/mm` format_
+
 In addition to the sparklines the macro will display stats on the longest
-continuous daily chain (useful for daily goals), and will echo the
+continuous daily chain of entries (useful to track daily goals), and will echo the
 original markdown table data.
 
 The default display of these elements can be over-ridden with the three
