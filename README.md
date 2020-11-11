@@ -23,7 +23,9 @@ Note: _The date column is currently in `dd/mm` format, with the most recent entr
 
 The macro will display a different coloured sparkline for each column of data. Each of the data points has a `title` attribute which displays the date and value on mouse hover.
 
-In addition to the sparklines the macro will display stats on the longest continuous daily chain (useful for tracking daily goals), and will echo the markdown table. The daily chain info includes a checkbox which sets a tag named `GTDone` on the current tiddler.
+In addition to the sparklines the macro will display stats on range & average of each column, and the longest continuous daily chain (useful for tracking daily goals). The macro will also echo the supplied markdown table which is rendered as normal by the tiddlywiki.
+
+The daily chain info includes a checkbox which sets a tag named `GTDone` on the current tiddler.
 
 Display of these elements can be over-ridden with three boolean parameters: `<hideChainInfo> <hideDataEcho> <hideSparkline>`
 
